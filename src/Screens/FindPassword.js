@@ -1,11 +1,41 @@
 import { View, Text,StyleSheet,StatusBar,Image, ImageBackground, TextInput,Dimensions, TouchableOpacity,SafeAreaView } from 'react-native'
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import LinearGradient from "react-native-linear-gradient";
 import { Formik, Form, Field } from 'formik';
 import { Header } from '../components/Header';
 import { useNavigation } from '@react-navigation/native';
 import {signUpValidationSchema} from "../ultil/validation"
 const FindPassword = () => {
+    const [countDown, setCountDown] = useState(0);
+    const [runTimer, setRunTimer] = useState(false);
+    // useEffect(() => {
+        let timerId;
+        if (runTimer) {
+            setCountDown(60 * 5);
+            timerId = setInterval(() => {
+              setCountDown((countDown) => countDown - 1);
+            }, 1000);
+        } else {
+            clearInterval(timerId);
+        }
+        // return () => clearInterval(timerId);
+    // }, []);
+
+    // useEffect(() => {
+        if (countDown < 0 && runTimer) {
+            console.log("expired");
+            setRunTimer(false);
+            setCountDown(0);
+        }
+    // }, [countDown]);
+    const seconds = String(countDown % 60).padStart(2, 0);
+    const minutes = String(Math.floor(countDown / 60)).padStart(2, 0);
+    const togglerTimer = () => setRunTimer((t) => !t);
+    const Veryfy = () =>{
+        console.log("dfasdfsfsdf");
+        setRunTimer((t) => !t)
+        // togglerTimer()
+    }
 
     return (
         <ImageBackground style={{flex:1,zIndex:0}} source={require("../../accset/image/backgroundColor.png")}>
@@ -19,6 +49,7 @@ const FindPassword = () => {
                 >
                     {({ handleChange, handleBlur, handleSubmit, values, errors,touched, }) => (
                         <View style={styles.boxLogin}>
+                            {console.log(`errors.password ${errors.password}`)}
                             <View style={styles.formLogin}>
                                 <View style={styles.boxInput}>
                                     <Image style={{width:16,height:16,}} 
@@ -27,10 +58,11 @@ const FindPassword = () => {
                                         style={styles.input}
                                         onChangeText={handleChange('password')}
                                         onBlur={handleBlur("password")}
+                                        secureTextEntry={true}
                                         value={values.password}
                                         placeholder='Password'
                                     />
-                                    <TouchableOpacity style={errors.confirmPassword ? styles.btnNotCheck : styles.btnCheck}>
+                                    <TouchableOpacity style={errors.password == undefined && errors.confirmPassword == undefined ? styles.btnCheck : styles.btnNotCheck}>
                                         <Image style={{
                                             width:15,
                                             height:15,
@@ -47,6 +79,7 @@ const FindPassword = () => {
                                         style={styles.inputConfirm}
                                         onChangeText={handleChange('confirmPassword')}
                                         onBlur={handleBlur("confirmPassword")}
+                                        secureTextEntry={true}
                                         value={values.confirmPassword}
                                         placeholder='Password Confirm'
                                     />
@@ -66,7 +99,7 @@ const FindPassword = () => {
                                     />
                                     {values.email ? 
                                         <LinearGradient style={{borderRadius:5,}} colors={['#002665', '#003A9A']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
-                                            <TouchableOpacity style={styles.btnVeryfy}>
+                                            <TouchableOpacity style={styles.btnVeryfy} onPress={()=>{}}>
                                                 <Text style={{color:"#FFFFFF"}}>Veryfy</Text>
                                             </TouchableOpacity>
                                         </LinearGradient>
@@ -79,8 +112,6 @@ const FindPassword = () => {
                                 </View>
                                 <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
                             </View>
-                            {console.log(`errors: ${JSON.stringify(errors)}`)}
-                            {console.log(`touched: ${JSON.stringify(touched)}`)}
                             {(errors.email && touched.email) && 
                                 <View style={styles.error}>
                                     <Image style={{height:24,width:24}} source={require("../../accset/icon/Error.png")}/>
@@ -95,10 +126,16 @@ const FindPassword = () => {
                                         style={styles.input}
                                         placeholder='Verification code'
                                     />
-                                    
-                                    <View style={styles.coutnTime}>
-                                        <Text style={styles.coutnDownTime}>04:59</Text>
-                                    </View>
+                                    {console.log(`minutes: ${minutes} seconds:${seconds}`)}
+                                    {runTimer ? 
+                                        <View style={styles.coutnTime}>
+                                            <Text style={styles.coutnDownTime}>{minutes}:{seconds}</Text>
+                                        </View>
+                                        : 
+                                        <View style={styles.coutnTime}>
+                                            {/* <Text style={styles.coutnDownTime}>{minutes}:{seconds}</Text> */}
+                                        </View>
+                                    }
                                 </View>
                                 <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
                             </View>

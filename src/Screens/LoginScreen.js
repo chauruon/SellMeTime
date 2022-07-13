@@ -39,7 +39,7 @@ const LoginScreen = () => {
                     </View>
                     <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
                 </View>
-                <TouchableOpacity style={styles.bntLogin} onPress={()=>navigation.navigate("Home")} >
+                <TouchableOpacity style={styles.bntLogin} onPress={()=>navigation.navigate("TabScreen")} >
                     <Text style={{color:"white",fontWeight:"700"}}>Login</Text>
                 </TouchableOpacity>
                 <View style={styles.boxInfor}>

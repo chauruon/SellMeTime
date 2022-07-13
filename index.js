@@ -10,12 +10,11 @@ import { Provider } from 'react-redux';
 import {store} from "./src/redux/store"
 // import {store} from './src/redux/storeRedux'
 
-import HomeScreen from "./src/Screens/HomeScreen"
 
 const RNRedux = () => {
     return (
         <Provider store={store}>
-            <HomeScreen />
+            <App />
         </Provider>
     )
 }

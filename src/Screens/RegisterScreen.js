@@ -7,23 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Formik, Form, Field } from 'formik';
 import {signUpValidationSchema} from "../ultil/validation";
 const RegisterScreen = () => {
-    const [minutes,setMinutes] = useState(undefined);
-    const [seconds,setSeconds] = useState(undefined);
-    useEffect(()=>{
-        // count();
-    },[])
-    var count = () => {
-        let countdowns = "";
-        const time = 5 * 60;
-        const now = moment();
-        const countdown = moment(time - now);
-        // console.log("sdafasfsdfsf: "+ now);
-        // console.log(`count down: ${countdown}`);
-        const minutes = countdown.format('mm');
-        const seconds = countdown.format('ss');
-        countdowns = `${minutes}:${seconds}`
-        return countdowns;
-    }
+
+
     return (
         <ImageBackground style={{flex:1,}} source={require("../../accset/image/backgroundColor.png")}>
             <StatusBar translucent={true} backgroundColor={'transparent'} />
@@ -44,6 +29,7 @@ const RegisterScreen = () => {
                                         style={styles.input}
                                         onChangeText={handleChange('password')}
                                         onBlur={handleBlur("password")}
+                                        secureTextEntry={true}
                                         value={values.password}
                                         placeholder='Password'
                                     />
@@ -71,12 +57,13 @@ const RegisterScreen = () => {
                                         style={styles.input}
                                         onChangeText={handleChange('confirmPassword')}
                                         onBlur={handleBlur("confirmPassword")}
+                                        secureTextEntry={true}
                                         value={values.confirmPassword}
                                         placeholder='Password Confirm'
                                     />
                                     {console.log(`errors password: ${JSON.stringify(errors.password)}`)}
                                     {console.log(`errors confirmPassword: ${JSON.stringify(errors.confirmPassword)}`)}
-                                    {errors.confirmPassword == undefined ? 
+                                    {errors.confirmPassword !== undefined ? 
                                         <TouchableOpacity style={styles.btnCheck}>
                                             <Image style={{width:15,height:15,}} source={require("../../accset/icon/check.png")}/>
                                         </TouchableOpacity>
@@ -123,8 +110,8 @@ const RegisterScreen = () => {
                                     />
                                     
                                     <View style={styles.btnVeryfy}>
-                                        <Text style={styles.coutnDownTime}>{minutes}:{seconds}</Text>
-                                        <Text style={styles.coutnDownTime}>{count()}</Text>
+                                        {/* <Text style={styles.coutnDownTime}>{minutes}:{seconds}</Text>
+                                        <Text style={styles.coutnDownTime}>{count()}</Text> */}
                                     </View>
                                 </View>
                                 <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
