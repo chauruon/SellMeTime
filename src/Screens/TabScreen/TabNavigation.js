@@ -41,7 +41,9 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'Activity',
                     tabBarIcon: ({ focused }) => (
-                        <Image source={require("../../../accset/icon/Activity.png")} style={focused ? styles.activityLive : styles.NotActivity} size={26} />
+                        focused ?
+                        <Image source={require("../../../accset/icon/ActivityLive.png")} size={26} />
+                        :<Image source={require("../../../accset/icon/Activity.png")} size={26} />
                     ),
                 }}
             />
@@ -51,7 +53,8 @@ const TabNavigation = () => {
                 options={{
                     tabBarLabel: 'Chat',
                     tabBarIcon: ({ focused }) => (
-                        <Image source={require("../../../accset/icon/Chat.png")} style={focused ? styles.ChatActi : styles.notChatActi} size={26} />
+                        focused ? <Image source={require("../../../accset/icon/ChatActy.png")} size={26} />
+                        :  <Image source={require("../../../accset/icon/Chat.png")} size={26} />
                     ),
                 }}
             />
@@ -60,8 +63,10 @@ const TabNavigation = () => {
                 component={History}
                 options={{
                     tabBarLabel: 'History',
-                    tabBarIcon: ({ color }) => (
-                        <Image source={require("../../../accset/icon/History.png")} color={color} size={26} />
+                    tabBarIcon: ({ focused,color }) => (
+                        focused ?
+                        <Image source={require("../../../accset/icon/HistoryActy.png")} color={color} size={26} />
+                        : <Image source={require("../../../accset/icon/History.png")} color={color} size={26} />
                     ),
                 }}
             />
@@ -70,7 +75,10 @@ const TabNavigation = () => {
                 component={Profile}
                 options={{
                     tabBarLabel: 'Profile',
-                    tabBarIcon: ({ color }) => (
+                    tabBarIcon: ({ focused,color }) => (
+                        focused ?
+                            <Image source={require("../../../accset/icon/ProfileActy.png")} color={color} size={26} />
+                        :  
                         <Image source={require("../../../accset/icon/Profile.png")} color={color} size={26} />
                     ),
                 }}
