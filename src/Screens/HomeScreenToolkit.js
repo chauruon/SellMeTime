@@ -2,39 +2,44 @@ import { View, Text,StyleSheet,Dimensions,Image, FlatList, TouchableOpacity} fro
 import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { INCREMENT_COUNT, DECREMENT_COUNT } from '../redux/actions/countAction';
-// import {change, getNumber} from '../redux/actions/numberAction'
+// import { INCREMENT_COUNT, DECREMENT_COUNT } from '../redux/actions/countAction';
+import {change, getNumber} from '../redux/actions/numberAction'
 
 
-const HomeScreen = () => {
+const HomeScreenToolkit = () => {
     const dispatch = useDispatch();
-    const number = useSelector((store) => store.count.count);
+    const number = useSelector(getNumber)
 
-    const decrementCount =()=> {
-        dispatch(DECREMENT_COUNT());
+    const setNumber = () => {
+        dispatch(change(999))
     }
-    const incrementCount =()=> {
-        dispatch(INCREMENT_COUNT());
-    }
+    // const count = useSelector((store) => store.count.count);
+
+    // const decrementCount =()=> {
+    //     dispatch(DECREMENT_COUNT());
+    // }
+    // const incrementCount =()=> {
+    //     dispatch(INCREMENT_COUNT());
+    // }
 
     return (
         <View style={styles.container}>
             <Text style={styles.title_text}>Counter App</Text>
             <Text style={styles.counter_text}>{number}</Text>
     
-            <TouchableOpacity onPress={()=>incrementCount()} style={styles.btn}>
+            <TouchableOpacity onPress={()=>setNumber()} style={styles.btn}>
                 <Text style={styles.btn_text}> Increment </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>decrementCount()} style={{ ...styles.btn, backgroundColor: '#6e3b3b' }}>
+            {/* <TouchableOpacity onPress={()=>decrementCount()} style={{ ...styles.btn, backgroundColor: '#6e3b3b' }}>
                 <Text style={styles.btn_text}> Decrement </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
       </View>
     )
 }
 
   
-export default HomeScreen;
+export default HomeScreenToolkit;
 
 const styles = StyleSheet.create({
     container: {
