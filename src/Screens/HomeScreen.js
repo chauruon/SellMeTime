@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet,Dimensions, FlatList, } from 'react-native'
+import { View, Text,StyleSheet,Dimensions,Image, FlatList, } from 'react-native'
 import React from 'react'
 
 const data = [
@@ -36,14 +36,14 @@ const data = [
 
 const HomeScreen = () => {
     return (
-        <View style={{flex:1}}>
+        <View style={styles.constainer}>
             <Text>HomeScreen</Text>
             <FlatList data={data}
                 keyExtractor = {item => item.id}
                 renderItem={(item)=>{
                     return(
                         <View>
-                            
+                            {/* <Image su/> */}
                         </View>
                     )
                 }}/>
@@ -54,5 +54,9 @@ const HomeScreen = () => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
-
+    constainer:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center",
+    }
 })
