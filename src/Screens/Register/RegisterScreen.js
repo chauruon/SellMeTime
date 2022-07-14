@@ -2,15 +2,15 @@ import { View, Text,StyleSheet,StatusBar,Image, ImageBackground, TextInput,Dimen
 import React,{useEffect,useState} from 'react'
 import LinearGradient from "react-native-linear-gradient";
 import moment from 'moment';
-import { Header } from '../components/Header';
+import { Header } from '../../components/Header/Header';
 import { useNavigation } from '@react-navigation/native';
 import { Formik, Form, Field } from 'formik';
-import {signUpValidationSchema} from "../ultil/validation";
+import {signUpValidationSchema} from "../../ultil/validation";
 const RegisterScreen = () => {
 
 
     return (
-        <ImageBackground style={{flex:1,}} source={require("../../accset/image/backgroundColor.png")}>
+        <ImageBackground style={{flex:1,}} source={require("../../../accset/image/backgroundColor.png")}>
             <StatusBar translucent={true} backgroundColor={'transparent'} />
             <SafeAreaView style={styles.safeAreaView}>
                 <Header label="Register" leftSide={true}/>
@@ -24,7 +24,7 @@ const RegisterScreen = () => {
                             <View style={styles.formLogin}>
                                 <View style={styles.boxInput}>
                                     <Image style={{width:16,height:16,}} 
-                                        source={require("../../accset/icon/Lock.png")}/>
+                                        source={require("../../../accset/icon/Lock.png")}/>
                                     <TextInput 
                                         style={styles.input}
                                         onChangeText={handleChange('password')}
@@ -38,21 +38,21 @@ const RegisterScreen = () => {
                                             <TouchableOpacity style={styles.btnNotConfirm}></TouchableOpacity>
                                             :
                                             <TouchableOpacity style={styles.btnNotCheck}>
-                                                <Image style={{width:15,height:15,}} source={require("../../accset/icon/check.png")}/>
+                                                <Image style={{width:15,height:15,}} source={require("../../../accset/icon/check.png")}/>
                                             </TouchableOpacity>
                                         )
                                         :
                                         <TouchableOpacity style={styles.btnNotCheck}>
-                                            <Image style={{width:15,height:15,}} source={require("../../accset/icon/check.png")}/>
+                                            <Image style={{width:15,height:15,}} source={require("../../../accset/icon/check.png")}/>
                                         </TouchableOpacity>
                                     }
                                 </View>
-                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
+                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../../accset/icon/Line.png")}/>
                             </View>
                             <View style={styles.formLogin}>
                                 <View style={styles.boxInput}>
                                     <Image style={{width:16,height:16,}} 
-                                        source={require("../../accset/icon/Lock.png")}/>
+                                        source={require("../../../accset/icon/Lock.png")}/>
                                     <TextInput 
                                         style={styles.input}
                                         onChangeText={handleChange('confirmPassword')}
@@ -65,7 +65,7 @@ const RegisterScreen = () => {
                                     {console.log(`errors confirmPassword: ${JSON.stringify(errors.confirmPassword)}`)}
                                     {errors.confirmPassword !== undefined ? 
                                         <TouchableOpacity style={styles.btnCheck}>
-                                            <Image style={{width:15,height:15,}} source={require("../../accset/icon/check.png")}/>
+                                            <Image style={{width:15,height:15,}} source={require("../../../accset/icon/check.png")}/>
                                         </TouchableOpacity>
                                         : 
                                         <TouchableOpacity style={styles.btnNotConfirm}>
@@ -73,12 +73,12 @@ const RegisterScreen = () => {
                                         </TouchableOpacity>
                                     }
                                 </View>
-                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
+                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../../accset/icon/Line.png")}/>
                             </View>
                             <View style={styles.formLogin}>
                                 <View style={styles.boxInput}>
                                     <Image style={{width:16,height:16,}} 
-                                        source={require("../../accset/icon/Email.png")}/>
+                                        source={require("../../../accset/icon/Email.png")}/>
                                     <TextInput 
                                         style={styles.input}
                                         onChangeText={handleChange('email')}
@@ -98,12 +98,12 @@ const RegisterScreen = () => {
                                         </TouchableOpacity>
                                     }
                                 </View>
-                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
+                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../../accset/icon/Line.png")}/>
                             </View>
                             <View style={styles.formLogin}>
                                 <View style={styles.boxInput}>
                                     <Image style={{width:16,height:16,}} 
-                                        source={require("../../accset/icon/Shield.png")}/>
+                                        source={require("../../../accset/icon/Shield.png")}/>
                                     <TextInput 
                                         style={styles.input}
                                         placeholder='Verification code'
@@ -114,7 +114,7 @@ const RegisterScreen = () => {
                                         <Text style={styles.coutnDownTime}>{count()}</Text> */}
                                     </View>
                                 </View>
-                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../accset/icon/Line.png")}/>
+                                <Image style={{height:1,borderWidth:0.7,width:widthBox,}} source={require("../../../accset/icon/Line.png")}/>
                             </View>
                             <View style={styles.boxInfor}>
                                 <View style={{
@@ -122,7 +122,7 @@ const RegisterScreen = () => {
                                     justifyContent:"center",
                                     alignItems:"center",
                                     }}>
-                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../accset/icon/dot.png")}/>
+                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../../accset/icon/dot.png")}/>
                                     <Text style={{
                                         color:"rgba(0, 38, 101, 0.6)",
                                     }}>After entering the correct password in the format, the Enter Email field becomes active.</Text>
@@ -132,7 +132,7 @@ const RegisterScreen = () => {
                                     justifyContent:"center",
                                     alignItems:"center",
                                     }}>
-                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../accset/icon/dot.png")}/>
+                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../../accset/icon/dot.png")}/>
                                     <Text style={{
                                         color:"rgba(0, 38, 101, 0.6)",
                                     }}>
@@ -144,7 +144,7 @@ const RegisterScreen = () => {
                                     justifyContent:"center",
                                     alignItems:"center",
                                     }}>
-                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../accset/icon/dot.png")}/>
+                                    <Image style={{width:5,height:5, marginRight:10,}} source={require("../../../accset/icon/dot.png")}/>
                                     <Text style={{
                                         color:"rgba(0, 38, 101, 0.6)",
                                     }}>

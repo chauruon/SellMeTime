@@ -15,7 +15,7 @@ import React,{useEffect,useState,useRef} from 'react'
 const data = [
     {
         id:1,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -27,7 +27,7 @@ const data = [
     },
     {
         id:2,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house. Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -39,7 +39,7 @@ const data = [
     },
     {
         id:3,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -51,7 +51,7 @@ const data = [
     },
     {
         id:4,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -63,7 +63,7 @@ const data = [
     },
     {
         id:5,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -75,7 +75,7 @@ const data = [
     },
     {
         id:6,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -87,7 +87,7 @@ const data = [
     },
     {
         id:7,
-        image: require("../../accset/image/sofa.jpg"),
+        image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
         price: "50k",
@@ -123,13 +123,13 @@ const HomeScreen = () => {
                         </View>
                         <View style={styles.btnEdit}>
                             <TouchableOpacity style={styles.btnSetting}  onPress={() => setModalVisible(true)} >
-                                <Image style={{height:24,width:24}} source={require("../../accset/icon/Sort.png")}/>
+                                <Image style={{height:24,width:24}} source={require("../../../accset/icon/Sort.png")}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.btnSetting}>
-                                <Image style={{height:24,width:24}} source={require("../../accset/icon/Write.png")}/>
+                                <Image style={{height:24,width:24}} source={require("../../../accset/icon/Write.png")}/>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.btnLocation}>
-                                <Image style={{height:24,width:24}} source={require("../../accset/icon/Location.png")}/>
+                                <Image style={{height:24,width:24}} source={require("../../../accset/icon/Location.png")}/>
                             </TouchableOpacity>
                         </View>
                     </View>

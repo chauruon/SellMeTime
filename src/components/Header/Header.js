@@ -9,7 +9,7 @@ export const Header = ({leftSide = false,rightSide = false, label}) => {
         <View style={styles.container}>
             {leftSide && (
                 <TouchableOpacity style={styles.leftSide} onPress={()=> navigation.goBack()}>
-                    <Image style={{height:24,width:24}} source={require("../../accset/icon/Arrow.png")}/>
+                    <Image style={{height:24,width:24}} source={require("../../../accset/icon/Arrow.png")}/>
                 </TouchableOpacity>
             )}
             
@@ -23,7 +23,7 @@ export const Header = ({leftSide = false,rightSide = false, label}) => {
 
             {rightSide && (
                 <TouchableOpacity style={styles.rightSide} onPress={()=>{}}>
-                    <Image style={{height:24,width:24}} source={require("../../accset/icon/Arrow.png")}/>
+                    <Image style={{height:24,width:24}} source={require("../../../accset/icon/Arrow.png")}/>
                 </TouchableOpacity>
             )}
         </View>
