@@ -1,10 +1,10 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
-import HomeScreen from '../HomeScreen';
-import Activity from '../Activity'
-import Chat from '../Chat'
-import History from '../History'
-import Profile from '../Profile'
+import HomeScreen from '../Home/HomeScreen';
+import Activity from '../Activity/Activity'
+import Chat from '../Chat/Chat'
+import History from '../History/History'
+import Profile from '../Profile/Profile'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();

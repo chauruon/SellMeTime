@@ -2,9 +2,9 @@ import { View, Text,StyleSheet,StatusBar,Image, ImageBackground, TextInput,Dimen
 import React,{useEffect,useState} from 'react'
 import LinearGradient from "react-native-linear-gradient";
 import { Formik, Form, Field } from 'formik';
-import { Header } from '../components/Header';
+import { Header } from '../../components/Header/Header';
 import { useNavigation } from '@react-navigation/native';
-import {signUpValidationSchema} from "../ultil/validation"
+import {signUpValidationSchema} from "../../ultil/validation"
 const FindPassword = () => {
     const [countDown, setCountDown] = useState(0);
     const [runTimer, setRunTimer] = useState(false);
@@ -38,7 +38,7 @@ const FindPassword = () => {
     }
 
     return (
-        <ImageBackground style={{flex:1,zIndex:0}} source={require("../../accset/image/backgroundColor.png")}>
+        <ImageBackground style={{flex:1,zIndex:0}} source={require("../../../accset/image/backgroundColor.png")}>
             <StatusBar translucent={true} backgroundColor={'transparent'} />
             <SafeAreaView style={styles.safeAreaView}>
                 <Header label="Find Password" leftSide={true}/>

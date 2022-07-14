@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import LoginScreen from "./Screens/LoginScreen"
-import RegisterScreen from "./Screens/RegisterScreen"
-import FindPassword from "./Screens/FindPassword"
+import RegisterScreen from "./Screens/Register/RegisterScreen"
+import FindPassword from "./Screens/FindPassword/FindPassword"
 import HomeScreenRN_Redux from "./Screens/HomeScreenRN_Redux";
 import HomeScreenToolkit from "./Screens/HomeScreenToolkit";
 import tabScreen from "./Screens/TabScreen/TabNavigation";
