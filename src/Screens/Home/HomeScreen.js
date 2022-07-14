@@ -18,7 +18,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Buy:"Buy"},
@@ -30,7 +30,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house. Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Sell:"Sell"},
@@ -42,7 +42,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Buy:"Buy"},
@@ -54,7 +54,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Sell:"Sell"},
@@ -66,7 +66,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Sell:"Sell"},
@@ -78,7 +78,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Sell:"Sell"},
@@ -90,7 +90,7 @@ const data = [
         image: require("../../../accset/image/sofa.jpg"),
         desc: "Move sofa to living room and clean house",
         date: "2020/05/15 13:00:00",
-        price: "50k",
+        price: "50K",
         typePrice:"VND",
         itemTypeof:[
             { Sell:"Sell"},
@@ -195,7 +195,6 @@ const HomeScreen = () => {
                             </View>
                           )}
                     />
-                   
                 </SafeAreaView>
             </View>
     )

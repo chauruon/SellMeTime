@@ -9,7 +9,7 @@ import { name as appName } from './app.json';
 import { Provider } from 'react-redux';
 import {store} from "./src/redux/store"
 // import {store} from './src/redux/storeRedux'
-
+import Select from './src/components/Popup/Select';
 
 const RNRedux = () => {
     return (
@@ -19,4 +19,4 @@ const RNRedux = () => {
     )
 }
 
-AppRegistry.registerComponent(appName, () => RNRedux);
+AppRegistry.registerComponent(appName, () => Select);
